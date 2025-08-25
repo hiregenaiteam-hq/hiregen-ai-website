@@ -24,19 +24,17 @@ import waitlist from '@zootools/waitlist-js'
 import { useRef } from "react"
 
 const socialProofLogos = [
-  { name: "Goldman Sachs", src: "/landing%20page%20porfolio%20logos/goldman-sachs.svg" },
-  { name: "Shopify", src: "/landing%20page%20porfolio%20logos/shopify-2.svg" },
-  { name: "Revolut", src: "/landing%20page%20porfolio%20logos/revolut-1.svg" },
-  { name: "Grab", src: "/landing%20page%20porfolio%20logos/grab.svg" },
-  { name: "MTN", src: "/landing%20page%20porfolio%20logos/mtn-3.svg" },
-  { name: "Emirates", src: "/landing%20page%20porfolio%20logos/emirates-group.svg" },
-  { name: "Swissport", src: "/landing%20page%20porfolio%20logos/swissport.svg" },
-  { name: "McKinsey & Company", src: "/landing%20page%20porfolio%20logos/mckinsey-company.svg" },
+  { name: "AHRC", src: "/landing%20page%20porfolio%20logos/ahrc.jpg" },
+  { name: "GCHRA", src: "/landing%20page%20porfolio%20logos/gchra.jpg" },
   { name: "Golden Star Resources", src: "/landing%20page%20porfolio%20logos/golden_star_resources_ltd_logo.png" },
-  { name: "Safaricom", src: "/landing%20page%20porfolio%20logos/safaricom.svg" },
-  { name: "Adnoc", src: "/landing%20page%20porfolio%20logos/adnoc.svg" },
-  { name: "SHR", src: "/landing%20page%20porfolio%20logos/shrm-main.svg" },
+  { name: "Kusi Consulting", src: "/landing%20page%20porfolio%20logos/kusiconsulting_logo.jpg" },
+  { name: "RHRMO", src: "/landing%20page%20porfolio%20logos/rhrmo.png" },
+  { name: "Rwanda Energy Group", src: "/landing%20page%20porfolio%20logos/Rwanda_Energy_Group_logo.png" },
+  { name: "SHRM", src: "/landing%20page%20porfolio%20logos/shrm-main.svg" },
+  { name: "Swissport", src: "/landing%20page%20porfolio%20logos/swissport.svg" },
+  { name: "Benin Cashew SA", src: "/landing page porfolio logos/benin_cashew_sa_logo.jpg"}
 ]
+
 
 const features = [
   {
