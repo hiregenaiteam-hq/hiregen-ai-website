@@ -1,2 +1,1 @@
-# hiregen-ai-website
-HireGen-AI Website
+# HireGen-AI Landing Page
