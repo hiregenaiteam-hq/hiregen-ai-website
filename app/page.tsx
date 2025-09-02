@@ -392,26 +392,32 @@ export default function LandingPage() {
       </section>
 
       {/* Social Proof Bar */}
-      <section className="pt-8 sm:pt-12 pb-8 sm:pb-12 bg-white/60 backdrop-blur-md" aria-label="Trusted by leading companies">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <section className="pt-8 sm:pt-12 pb-8 sm:pb-12 bg-umukozi-gradient-subtle backdrop-blur-md relative overflow-hidden" aria-label="Trusted by leading companies">
+        {/* Subtle brand gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-umukozi-orange/5 via-white/80 to-umukozi-teal/5"></div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6 md:gap-8 items-center">
             {socialProofLogos.map((logo, index) => (
               <motion.div
                 key={logo.name}
-                className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-400"
+                className="flex items-center justify-center grayscale hover:grayscale-0 hover:scale-110 transition-all duration-400 group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Image
-                  src={logo.src}
-                  alt={`${logo.name} company logo - UmukoziHR client`}
-                  className="h-8 sm:h-10 md:h-12 w-16 sm:w-20 md:w-24 object-contain"
-                  width={96}
-                  height={48}
-                  loading="lazy"
-                />
+                <div className="relative p-2 rounded-lg group-hover:bg-white/20 group-hover:shadow-lg transition-all duration-300">
+                  <Image
+                    src={logo.src}
+                    alt={`${logo.name} company logo - UmukoziHR client`}
+                    className="h-8 sm:h-10 md:h-12 w-16 sm:w-20 md:w-24 object-contain filter group-hover:brightness-110 transition-all duration-300"
+                    width={96}
+                    height={48}
+                    loading="lazy"
+                  />
+                  {/* Brand-colored hover accent */}
+                  <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-umukozi-orange/20 transition-all duration-300"></div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -466,8 +472,13 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gray-50" aria-labelledby="how-it-works-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-umukozi-orange/5 to-umukozi-teal/5 relative overflow-hidden" aria-labelledby="how-it-works-heading">
+        {/* Subtle brand accent pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-10 right-10 w-32 h-32 bg-umukozi-orange/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-20 left-20 w-40 h-40 bg-umukozi-teal/10 rounded-full blur-2xl"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
             {/* Left - Steps */}
             <div className="lg:sticky lg:top-32 lg:h-fit">
@@ -570,7 +581,12 @@ export default function LandingPage() {
 
       {/* Comparison Table */}
       <section id="why" className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-umukozi-orange/10 to-umukozi-teal/10 opacity-60"></div>
+        {/* Additional brand accent elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-umukozi-orange/15 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-56 h-56 bg-umukozi-teal/12 rounded-full blur-3xl"></div>
+        </div>
         <motion.div
           className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10"
           initial={{ opacity: 0, y: 50 }}
@@ -588,7 +604,7 @@ export default function LandingPage() {
             <div className="block sm:hidden">
               {comparisonData.map((row, index) => (
                 <div key={row.feature} className="border-b border-gray-200 last:border-b-0">
-                  <div className="p-4 bg-gray-50">
+                  <div className="p-4 bg-gradient-to-r from-umukozi-orange/5 to-umukozi-teal/5">
                     <h3 className="font-semibold text-gray-900 text-sm">{row.feature}</h3>
                   </div>
                   <div className="p-4 space-y-3">
@@ -620,7 +636,7 @@ export default function LandingPage() {
 
             {/* Desktop table */}
             <table className="w-full hidden sm:table">
-              <thead className="bg-gray-50">
+              <thead className="bg-gradient-to-r from-umukozi-orange/5 to-umukozi-teal/5">
                 <tr>
                   <th className="px-3 sm:px-6 py-3 sm:py-4 text-left font-semibold text-gray-900 text-sm sm:text-base">Feature</th>
                   <th className="px-3 sm:px-6 py-3 sm:py-4 text-center font-semibold text-white bg-umukozi-orange text-sm sm:text-base">UmukoziHR</th>
@@ -630,7 +646,7 @@ export default function LandingPage() {
               </thead>
               <tbody>
                 {comparisonData.map((row, index) => (
-                  <tr key={row.feature} className={index % 2 === 0 ? "bg-gray-50/50" : "bg-white"}>
+                  <tr key={row.feature} className={index % 2 === 0 ? "bg-gradient-to-r from-umukozi-orange/3 to-umukozi-teal/3" : "bg-white"}>
                     <td className="px-3 sm:px-6 py-3 sm:py-4 font-medium text-gray-900 text-sm sm:text-base">{row.feature}</td>
                     <td className="px-3 sm:px-6 py-3 sm:py-4 text-center bg-umukozi-orange/5">
                       <div className="flex items-center justify-center space-x-1 sm:space-x-2">
@@ -659,8 +675,13 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-12 sm:py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <section id="pricing" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-umukozi-orange/3 to-umukozi-teal/3 relative overflow-hidden">
+        {/* Subtle brand accent elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 right-1/4 w-40 h-40 bg-umukozi-orange/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-32 left-1/3 w-32 h-32 bg-umukozi-teal/15 rounded-full blur-xl"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -739,8 +760,13 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-12 sm:py-16 md:py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section id="faq" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-umukozi-teal/5 to-umukozi-orange/5 relative overflow-hidden">
+        {/* Subtle brand accent elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-10 w-24 h-24 bg-umukozi-teal/20 rounded-full blur-xl"></div>
+          <div className="absolute bottom-1/3 right-16 w-36 h-36 bg-umukozi-orange/15 rounded-full blur-2xl"></div>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             className="text-center mb-8 sm:mb-12"
             initial={{ opacity: 0, y: 30 }}
@@ -874,8 +900,10 @@ export default function LandingPage() {
       </main>
       
       {/* Footer */}
-      <footer className="h-[100px] bg-white border-t border-gray-200 flex items-center justify-center">
-        <p className="text-gray-500">© 2025 UmukoziHR. All rights reserved.</p>
+      <footer className="h-[100px] bg-gradient-to-r from-umukozi-orange/5 via-white to-umukozi-teal/5 border-t border-umukozi-orange/20 flex items-center justify-center relative overflow-hidden">
+        {/* Subtle brand accent */}
+        <div className="absolute inset-0 bg-gradient-to-r from-umukozi-orange/3 to-umukozi-teal/3 opacity-30"></div>
+        <p className="text-gray-600 relative z-10 font-medium">© 2025 <span className="text-umukozi-teal font-semibold">UmukoziHR</span>. All rights reserved.</p>
       </footer>
     </div>
   )
