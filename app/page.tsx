@@ -842,13 +842,13 @@ export default function LandingPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Ready to find your next HR professional?</h3>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Ready to find your next key hire?</h3>
             <Link href="/login">
               <Button
                 className="w-full sm:w-auto bg-umukozi-orange hover:bg-umukozi-orange-light text-white rounded-xl px-6 sm:px-8 py-3 text-base sm:text-lg focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange transition-colors"
                 onClick={clickPopup}
               >
-                See HR Talent
+                See Talent
               </Button>
             </Link>
           </motion.div>
