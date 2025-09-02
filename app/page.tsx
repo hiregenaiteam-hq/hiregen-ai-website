@@ -125,7 +125,7 @@ const structuredData = {
       "@type": "WebPage",
       "@id": "https://umukozihr-ai.vercel.app/#webpage",
       "url": "https://umukozihr-ai.vercel.app",
-      "name": "UmukoziHR - AI-Powered HR Solutions | Transform Your Hiring Process",
+      "name": "UmukoziHR - HR powered by AI Agents | Automate Your entire Hiring Process with AI Agents",
       "isPartOf": {
         "@id": "https://umukozihr-ai.vercel.app/#website"
       },
