@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600">
+  <defs>
+    <linearGradient id="bggrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <filter id="softGlowOrange" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="24" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlowBlue" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="16" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .wordmark { font-family: 'Inter', 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                  font-size: 180px; font-weight: 700; letter-spacing: 0.5px; }
+    </style>
+  </defs>
+
+  <!-- Background - now transparent -->
+  <!-- <rect width="1600" height="600" fill="url(#bggrad)"/> -->
+
+  <!-- Icon group -->
+  <g id="icon" transform="translate(180,160)" filter="url(#softGlowOrange)">
+    <!-- Orange 'U' container -->
+    <g>
+      <defs>
+        <mask id="umask">
+          <!-- White = keep, black = cut out -->
+          <rect x="0" y="0" width="260" height="260" rx="64" fill="white"/>
+          <!-- Inner rounded rect reaches the top to create an open 'U' -->
+          <rect x="56" y="-1" width="148" height="220" rx="44" fill="black"/>
+        </mask>
+      </defs>
+      <rect x="0" y="0" width="260" height="260" rx="64" fill="#FF8A00" mask="url(#umask)"/>
+    </g>
+    <!-- The head dot -->
+    <circle cx="130" cy="-46" r="38" fill="#FF8A00"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(500,340)">
+    <!-- "Umukozi" in deep navy with subtle blue glow -->
+    <text x="0" y="0" class="wordmark" fill="#0A2E44" filter="url(#softGlowBlue)">Umukozi</text>
+    <!-- "HR" in orange with stronger orange glow -->
+    <text x="770" y="0" class="wordmark" fill="#FF8A00" filter="url(#softGlowOrange)">HR</text>
+  </g>
+</svg>

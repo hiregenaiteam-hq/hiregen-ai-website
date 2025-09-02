@@ -60,6 +60,12 @@ const config: Config = {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
+  			},
+  			umukozi: {
+  				orange: 'hsl(var(--umukozi-orange))',
+  				'orange-light': 'hsl(var(--umukozi-orange-light))',
+  				teal: 'hsl(var(--umukozi-teal))',
+  				'teal-light': 'hsl(var(--umukozi-teal-light))'
   			}
   		},
   		borderRadius: {

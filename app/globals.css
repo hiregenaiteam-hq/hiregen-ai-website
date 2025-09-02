@@ -10,6 +10,149 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* UmukoziHR Brand Utilities */
+  .bg-umukozi-orange {
+    background-color: hsl(var(--umukozi-orange));
+  }
+  
+  .bg-umukozi-orange-light {
+    background-color: hsl(var(--umukozi-orange-light));
+  }
+  
+  .bg-umukozi-teal {
+    background-color: hsl(var(--umukozi-teal));
+  }
+  
+  .bg-umukozi-teal-light {
+    background-color: hsl(var(--umukozi-teal-light));
+  }
+  
+  .text-umukozi-orange {
+    color: hsl(var(--umukozi-orange));
+  }
+  
+  .text-umukozi-orange-light {
+    color: hsl(var(--umukozi-orange-light));
+  }
+  
+  .text-umukozi-teal {
+    color: hsl(var(--umukozi-teal));
+  }
+  
+  .text-umukozi-teal-light {
+    color: hsl(var(--umukozi-teal-light));
+  }
+  
+  .border-umukozi-orange {
+    border-color: hsl(var(--umukozi-orange));
+  }
+  
+  .border-umukozi-teal {
+    border-color: hsl(var(--umukozi-teal));
+  }
+  
+  .bg-umukozi-gradient-hero {
+    background: var(--umukozi-gradient-hero);
+  }
+  
+  .bg-umukozi-gradient-cards {
+    background: var(--umukozi-gradient-cards);
+  }
+  
+  .bg-umukozi-gradient-subtle {
+    background: var(--umukozi-gradient-subtle);
+  }
+  
+  .hover\:bg-umukozi-orange:hover {
+    background-color: hsl(var(--umukozi-orange));
+  }
+  
+  .hover\:bg-umukozi-orange-light:hover {
+    background-color: hsl(var(--umukozi-orange-light));
+  }
+  
+  .hover\:text-umukozi-orange:hover {
+    color: hsl(var(--umukozi-orange));
+  }
+  
+  .hover\:border-umukozi-orange:hover {
+    border-color: hsl(var(--umukozi-orange));
+  }
+  
+  /* Responsive Brand Utilities */
+  @media (max-width: 640px) {
+    .text-umukozi-orange,
+    .text-umukozi-teal {
+      /* Ensure sufficient contrast on mobile */
+      font-weight: 500;
+    }
+    
+    .bg-umukozi-orange {
+      /* Slightly darker on mobile for better visibility */
+      background-color: hsl(24 100% 48%);
+    }
+    
+    .border-umukozi-orange,
+    .border-umukozi-teal {
+      /* Thicker borders on mobile for better visibility */
+      border-width: 2px;
+    }
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .text-umukozi-orange {
+      color: hsl(24 100% 40%);
+    }
+    
+    .text-umukozi-teal {
+      color: hsl(180 50% 20%);
+    }
+    
+    .bg-umukozi-orange {
+      background-color: hsl(24 100% 45%);
+    }
+    
+    .bg-umukozi-teal {
+      background-color: hsl(180 50% 20%);
+    }
+  }
+  
+  /* Focus states for accessibility */
+  .focus\:outline-umukozi-orange:focus {
+    outline-color: hsl(var(--umukozi-orange));
+  }
+  
+  .focus\:outline-umukozi-teal:focus {
+    outline-color: hsl(var(--umukozi-teal));
+  }
+  
+  /* Mobile-specific brand optimizations */
+  @media (max-width: 640px) {
+    /* Ensure touch targets are large enough */
+    .mobile-touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Optimize brand colors for smaller screens */
+    .bg-umukozi-gradient-hero {
+      background: linear-gradient(135deg, hsl(24 100% 75%) 0%, hsl(180 30% 45%) 100%);
+    }
+    
+    /* Better spacing for mobile brand elements */
+    .mobile-brand-spacing {
+      padding: 0.75rem;
+    }
+  }
+  
+  /* Tablet-specific optimizations */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .tablet-brand-spacing {
+      padding: 1rem;
+    }
+  }
 }
 
 @layer base {
@@ -47,6 +190,17 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* UmukoziHR Brand Colors */
+    --umukozi-orange: 24 100% 50%;        /* #FF7A00 */
+    --umukozi-orange-light: 24 100% 70%;   /* #FFB366 */
+    --umukozi-teal: 180 50% 23%;           /* #1E5A5A */
+    --umukozi-teal-light: 180 30% 42%;     /* #4A8B8B */
+    
+    /* Brand Gradients */
+    --umukozi-gradient-hero: linear-gradient(135deg, hsl(24 100% 70%) 0%, hsl(180 30% 42%) 100%);
+    --umukozi-gradient-cards: linear-gradient(145deg, hsl(24 100% 50%) 0%, hsl(180 50% 23%) 100%);
+    --umukozi-gradient-subtle: linear-gradient(90deg, hsl(24 100% 50% / 0.1) 0%, hsl(180 50% 23% / 0.1) 100%);
   }
   .dark {
     --background: 0 0% 3.9%;
