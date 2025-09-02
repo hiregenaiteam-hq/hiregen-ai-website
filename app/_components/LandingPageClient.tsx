@@ -21,7 +21,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useRef, useLayoutEffect } from "react"
-import waitlist from '@zootools/waitlist-js'
 import { UmukoziLogo } from "@/components/umukozi-logo"
 
 const socialProofLogos = [
@@ -33,9 +32,8 @@ const socialProofLogos = [
   { name: "Rwanda Energy Group", src: "/landing%20page%20porfolio%20logos/Rwanda_Energy_Group_logo.png" },
   { name: "SHRM", src: "/landing%20page%20porfolio%20logos/shrm-main.svg" },
   { name: "Swissport", src: "/landing%20page%20porfolio%20logos/swissport.svg" },
-  { name: "Benin Cashew SA", src: "/landing page porfolio logos/benin_cashew_sa_logo.jpg" }
+  { name: "Benin Cashew SA", src: "/landing%20page%20porfolio%20logos/benin_cashew_sa_logo.jpg" }
 ]
-
 
 const features = [
   {
@@ -163,7 +161,7 @@ function useMeasure() {
   return [ref, bounds] as const
 }
 
-export default function LandingPage() {
+export default function LandingPageClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [isDemoOpen, setIsDemoOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -200,10 +198,15 @@ export default function LandingPage() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
   }
 
-  // Waitlist popup handler
-  const clickPopup = (event: React.MouseEvent<HTMLButtonElement>) => {
+  // Waitlist popup handler with dynamic import
+  const clickPopup = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    waitlist.openPopup("ssEMzvqG6iBaTfRn7cF2");
+    try {
+      const { default: waitlist } = await import("@zootools/waitlist-js");
+      waitlist.openPopup("ssEMzvqG6iBaTfRn7cF2");
+    } catch (error) {
+      console.error("Failed to load waitlist:", error);
+    }
   };
 
   return (
@@ -328,9 +331,8 @@ export default function LandingPage() {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
-
-      {/* Floating Gradient Blobs */}
+      </nav>      
+{/* Floating Gradient Blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-umukozi-orange/20 rounded-full blur-2xl sm:blur-3xl"
