@@ -7,9 +7,25 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "HireGen - AI-Powered Recruiting Platform",
-  description: "Find your next hire with AI-powered candidate sourcing and assessment tools.",
-    generator: 'v0.dev'
+  title: "UmukoziHR - AI-Powered HR Solutions",
+  description: "Transform your hiring with UmukoziHR's intelligent recruiting platform. Connect with top talent faster using AI-powered candidate sourcing and assessment tools.",
+  generator: 'UmukoziHR',
+  keywords: ['HR solutions', 'AI recruiting', 'talent acquisition', 'hiring platform', 'UmukoziHR'],
+  authors: [{ name: 'UmukoziHR' }],
+  creator: 'UmukoziHR',
+  publisher: 'UmukoziHR',
+  openGraph: {
+    title: 'UmukoziHR - AI-Powered HR Solutions',
+    description: 'Transform your hiring with UmukoziHR\'s intelligent recruiting platform. Connect with top talent faster using AI-powered candidate sourcing and assessment tools.',
+    siteName: 'UmukoziHR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'UmukoziHR - AI-Powered HR Solutions',
+    description: 'Transform your hiring with UmukoziHR\'s intelligent recruiting platform. Connect with top talent faster using AI-powered candidate sourcing and assessment tools.',
+    creator: '@UmukoziHR',
+  },
 }
 
 export default function RootLayout({

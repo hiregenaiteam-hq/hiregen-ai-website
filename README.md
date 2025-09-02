@@ -1,1 +1,1 @@
-# HireGen-AI Landing Page
+# UmukoziHR Landing Page

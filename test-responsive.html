@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UmukoziHR Responsive Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #FFB366 0%, #4A8B8B 100%);
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .logo-test {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .logo-placeholder {
+            width: 100px;
+            height: 30px;
+            background: #FF7A00;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .cta-button {
+            background: #FF7A00;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #FFB366;
+            transform: translateY(-2px);
+        }
+        .brand-colors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .color-swatch {
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+        .orange { background: #FF7A00; }
+        .teal { background: #1E5A5A; }
+        .orange-light { background: #FFB366; }
+        .teal-light { background: #4A8B8B; }
+        
+        /* Mobile responsive */
+        @media (max-width: 640px) {
+            .logo-placeholder {
+                width: 80px;
+                height: 24px;
+                font-size: 10px;
+            }
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            .test-container {
+                padding: 16px;
+            }
+        }
+        
+        /* Tablet responsive */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .logo-placeholder {
+                width: 120px;
+                height: 32px;
+            }
+        }
+        
+        /* Desktop responsive */
+        @media (min-width: 1025px) {
+            .logo-placeholder {
+                width: 140px;
+                height: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 style="color: #1E5A5A; text-align: center;">UmukoziHR Responsive Design Test</h1>
+        
+        <div class="logo-test">
+            <div class="logo-placeholder">UmukoziHR</div>
+            <button class="cta-button">See Talent</button>
+        </div>
+        
+        <h2 style="color: #1E5A5A;">Brand Colors Test</h2>
+        <div class="brand-colors">
+            <div class="color-swatch orange">Primary Orange<br>#FF7A00</div>
+            <div class="color-swatch teal">Primary Teal<br>#1E5A5A</div>
+            <div class="color-swatch orange-light">Light Orange<br>#FFB366</div>
+            <div class="color-swatch teal-light">Light Teal<br>#4A8B8B</div>
+        </div>
+        
+        <h2 style="color: #1E5A5A;">Responsive Breakpoints</h2>
+        <ul style="color: #1E5A5A;">
+            <li><strong>Mobile:</strong> &lt; 640px - Smaller logo, compact buttons</li>
+            <li><strong>Tablet:</strong> 641px - 1024px - Medium logo, balanced layout</li>
+            <li><strong>Desktop:</strong> &gt; 1025px - Full logo, optimal spacing</li>
+        </ul>
+        
+        <p style="color: #666; text-align: center; margin-top: 40px;">
+            Resize your browser window to test responsive behavior
+        </p>
+    </div>
+</body>
+</html>
