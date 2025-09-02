@@ -22,15 +22,21 @@ export function UmukoziLogo({
   }
 
   return (
-    <Link href="/" className={`flex items-center ${className}`}>
+    <Link 
+      href="/" 
+      className={`flex items-center focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange focus:rounded-lg transition-all duration-200 ${className}`}
+      aria-label="UmukoziHR homepage"
+    >
       <Image
-        src="/umukozihr-logo-flat.svg"
+        src="/umukozihr-logo-optimized.svg"
         alt="UmukoziHR - AI-Powered HR Solutions"
         width={width}
         height={height}
         className={responsive ? "w-[100px] sm:w-[120px] md:w-[140px] lg:w-[160px] h-auto max-w-full" : "h-auto max-w-full"}
         priority
+        loading="eager"
         onError={() => setImageError(true)}
+        sizes="(max-width: 640px) 100px, (max-width: 768px) 120px, (max-width: 1024px) 140px, 160px"
       />
     </Link>
   )
@@ -39,10 +45,14 @@ export function UmukoziLogo({
 // Fallback text-based logo component for error states
 export function UmukoziLogoFallback({ className = "" }: { className?: string }) {
   return (
-    <Link href="/" className={`flex items-center ${className}`}>
+    <Link 
+      href="/" 
+      className={`flex items-center focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange focus:rounded-lg transition-all duration-200 ${className}`}
+      aria-label="UmukoziHR homepage"
+    >
       <div className="flex items-center space-x-1 sm:space-x-2">
         <div className="w-6 h-6 sm:w-8 sm:h-8 bg-umukozi-orange rounded-full flex items-center justify-center">
-          <span className="text-white font-bold text-xs sm:text-sm">U</span>
+          <span className="text-white font-bold text-xs sm:text-sm" aria-hidden="true">U</span>
         </div>
         <span className="text-lg sm:text-xl font-bold text-umukozi-teal">UmukoziHR</span>
       </div>

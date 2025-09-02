@@ -64,8 +64,10 @@ const config: Config = {
   			umukozi: {
   				orange: 'hsl(var(--umukozi-orange))',
   				'orange-light': 'hsl(var(--umukozi-orange-light))',
+  				'orange-dark': 'hsl(var(--umukozi-orange-dark))',
   				teal: 'hsl(var(--umukozi-teal))',
-  				'teal-light': 'hsl(var(--umukozi-teal-light))'
+  				'teal-light': 'hsl(var(--umukozi-teal-light))',
+  				'teal-dark': 'hsl(var(--umukozi-teal-dark))'
   			}
   		},
   		borderRadius: {

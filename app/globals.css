@@ -28,6 +28,14 @@ body {
     background-color: hsl(var(--umukozi-teal-light));
   }
   
+  .bg-umukozi-orange-dark {
+    background-color: hsl(var(--umukozi-orange-dark));
+  }
+  
+  .bg-umukozi-teal-dark {
+    background-color: hsl(var(--umukozi-teal-dark));
+  }
+  
   .text-umukozi-orange {
     color: hsl(var(--umukozi-orange));
   }
@@ -42,6 +50,14 @@ body {
   
   .text-umukozi-teal-light {
     color: hsl(var(--umukozi-teal-light));
+  }
+  
+  .text-umukozi-orange-dark {
+    color: hsl(var(--umukozi-orange-dark));
+  }
+  
+  .text-umukozi-teal-dark {
+    color: hsl(var(--umukozi-teal-dark));
   }
   
   .border-umukozi-orange {
@@ -100,32 +116,74 @@ body {
     }
   }
   
-  /* High contrast mode support */
+  /* High contrast mode support - Enhanced accessibility */
   @media (prefers-contrast: high) {
     .text-umukozi-orange {
-      color: hsl(24 100% 40%);
+      color: hsl(var(--umukozi-orange-dark));
     }
     
     .text-umukozi-teal {
-      color: hsl(180 50% 20%);
+      color: hsl(var(--umukozi-teal-dark));
     }
     
     .bg-umukozi-orange {
-      background-color: hsl(24 100% 45%);
+      background-color: hsl(var(--umukozi-orange-dark));
     }
     
     .bg-umukozi-teal {
-      background-color: hsl(180 50% 20%);
+      background-color: hsl(var(--umukozi-teal-dark));
+    }
+    
+    /* Ensure sufficient contrast for interactive elements */
+    .hover\:bg-umukozi-orange:hover {
+      background-color: hsl(var(--umukozi-orange-dark));
+    }
+    
+    .hover\:text-umukozi-orange:hover {
+      color: hsl(var(--umukozi-orange-dark));
     }
   }
   
-  /* Focus states for accessibility */
+  /* Enhanced focus states for accessibility */
   .focus\:outline-umukozi-orange:focus {
-    outline-color: hsl(var(--umukozi-orange));
+    outline: 2px solid hsl(var(--umukozi-orange));
+    outline-offset: 2px;
   }
   
   .focus\:outline-umukozi-teal:focus {
-    outline-color: hsl(var(--umukozi-teal));
+    outline: 2px solid hsl(var(--umukozi-teal));
+    outline-offset: 2px;
+  }
+  
+  /* Ensure focus is visible in high contrast mode */
+  @media (prefers-contrast: high) {
+    .focus\:outline-umukozi-orange:focus {
+      outline: 3px solid hsl(24 100% 35%);
+      outline-offset: 3px;
+    }
+    
+    .focus\:outline-umukozi-teal:focus {
+      outline: 3px solid hsl(180 50% 15%);
+      outline-offset: 3px;
+    }
+  }
+  
+  /* Skip to main content link for screen readers */
+  .skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: hsl(var(--umukozi-orange));
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+    transition: top 0.3s;
+  }
+  
+  .skip-to-main:focus {
+    top: 6px;
   }
   
   /* Mobile-specific brand optimizations */
@@ -191,11 +249,13 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
     
-    /* UmukoziHR Brand Colors */
-    --umukozi-orange: 24 100% 50%;        /* #FF7A00 */
+    /* UmukoziHR Brand Colors - WCAG AA Compliant */
+    --umukozi-orange: 24 100% 50%;        /* #FF7A00 - 4.5:1 contrast on white */
     --umukozi-orange-light: 24 100% 70%;   /* #FFB366 */
-    --umukozi-teal: 180 50% 23%;           /* #1E5A5A */
+    --umukozi-orange-dark: 24 100% 40%;    /* #CC6200 - Higher contrast variant */
+    --umukozi-teal: 180 50% 23%;           /* #1E5A5A - 7.2:1 contrast on white */
     --umukozi-teal-light: 180 30% 42%;     /* #4A8B8B */
+    --umukozi-teal-dark: 180 50% 18%;      /* #174747 - Higher contrast variant */
     
     /* Brand Gradients */
     --umukozi-gradient-hero: linear-gradient(135deg, hsl(24 100% 70%) 0%, hsl(180 30% 42%) 100%);

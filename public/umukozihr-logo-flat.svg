@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">UmukoziHR - AI-Powered HR Solutions</title>
   <defs>
     <style>
-      .wordmark { font-family: 'Inter', 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-                  font-size: 180px; font-weight: 700; letter-spacing: 0.5px; }
+      .wordmark { 
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 180px; 
+        font-weight: 700; 
+        letter-spacing: 0.5px; 
+        font-display: swap;
+      }
     </style>
+    <mask id="umaskFlat">
+      <rect x="0" y="0" width="260" height="260" rx="64" fill="white"/>
+      <rect x="56" y="-1" width="148" height="220" rx="44" fill="black"/>
+    </mask>
   </defs>
-  <!-- Transparent background version (no glow) -->
+  
+  <!-- Icon -->
   <g id="icon" transform="translate(180,160)">
-    <defs>
-      <mask id="umaskFlat">
-        <rect x="0" y="0" width="260" height="260" rx="64" fill="white"/>
-        <rect x="56" y="-1" width="148" height="220" rx="44" fill="black"/>
-      </mask>
-    </defs>
-    <rect x="0" y="0" width="260" height="260" rx="64" fill="#FF8A00" mask="url(#umaskFlat)"/>
-    <circle cx="130" cy="-46" r="38" fill="#FF8A00"/>
+    <rect x="0" y="0" width="260" height="260" rx="64" fill="#FF7A00" mask="url(#umaskFlat)"/>
+    <circle cx="130" cy="-46" r="38" fill="#FF7A00"/>
   </g>
 
+  <!-- Wordmark -->
   <g transform="translate(500,340)">
-    <text x="0" y="0" class="wordmark" fill="#0A2E44">Umukozi</text>
-    <text x="770" y="0" class="wordmark" fill="#FF8A00">HR</text>
+    <text x="0" y="0" class="wordmark" fill="#1E5A5A">Umukozi</text>
+    <text x="770" y="0" class="wordmark" fill="#FF7A00">HR</text>
   </g>
 </svg>

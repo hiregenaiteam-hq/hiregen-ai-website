@@ -195,6 +195,11 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-umukozi-gradient-hero">
+      {/* Skip to main content for accessibility */}
+      <a href="#main-content" className="skip-to-main">
+        Skip to main content
+      </a>
+      
       {/* Sticky Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 h-[64px] sm:h-[72px] backdrop-blur-lg bg-white/80 border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
@@ -234,6 +239,7 @@ export default function LandingPage() {
           <Button
             className="hidden md:flex w-[120px] lg:w-[132px] h-[40px] lg:h-[44px] bg-umukozi-orange hover:bg-umukozi-orange-light text-white rounded-xl focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange transition-colors text-sm lg:text-base flex-shrink-0"
             onClick={clickPopup}
+            aria-label="Join waitlist to see talent pool"
           >
             See Talent
           </Button>
@@ -331,6 +337,7 @@ export default function LandingPage() {
       </div>
 
       {/* Hero Section */}
+      <main id="main-content">
       <section className="min-h-screen flex items-center justify-center overflow-hidden relative pt-16 sm:pt-20">
         <div className="text-center z-10 max-w-4xl mx-auto px-4 sm:px-6">
           <motion.h1
@@ -348,7 +355,7 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
-            Connect with top talent faster using UmukoziHR's intelligent recruiting platform
+            Connect with top talent faster using UmukoziHR&apos;s intelligent recruiting platform
           </motion.h2>
 
           <motion.div
@@ -361,6 +368,7 @@ export default function LandingPage() {
             <Button
               className="w-full sm:w-auto bg-umukozi-orange hover:bg-umukozi-orange-light text-white hover:scale-105 transition-all duration-400 shadow-xl rounded-xl px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange"
               onClick={clickPopup}
+              aria-label="Join waitlist to start hiring smarter with UmukoziHR"
             >
               Start Hiring Smarter
             </Button>
@@ -384,7 +392,7 @@ export default function LandingPage() {
       </section>
 
       {/* Social Proof Bar */}
-      <section className="pt-8 sm:pt-12 pb-8 sm:pb-12 bg-white/60 backdrop-blur-md">
+      <section className="pt-8 sm:pt-12 pb-8 sm:pb-12 bg-white/60 backdrop-blur-md" aria-label="Trusted by leading companies">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6 md:gap-8 items-center">
             {socialProofLogos.map((logo, index) => (
@@ -396,10 +404,13 @@ export default function LandingPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <img
+                <Image
                   src={logo.src}
-                  alt={logo.name}
+                  alt={`${logo.name} company logo - UmukoziHR client`}
                   className="h-8 sm:h-10 md:h-12 w-16 sm:w-20 md:w-24 object-contain"
+                  width={96}
+                  height={48}
+                  loading="lazy"
                 />
               </motion.div>
             ))}
@@ -408,7 +419,7 @@ export default function LandingPage() {
       </section>
 
       {/* Feature Cards */}
-      <section id="features" className="py-12 sm:py-16 md:py-20">
+      <section id="features" className="py-12 sm:py-16 md:py-20" aria-labelledby="features-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             className="text-center mb-12 sm:mb-16"
@@ -417,7 +428,7 @@ export default function LandingPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything HR teams need to hire smarter</h2>
+            <h2 id="features-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything HR teams need to hire smarter</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">AI-powered HR solutions that transform your recruitment process</p>
           </motion.div>
 
@@ -455,12 +466,12 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50" aria-labelledby="how-it-works-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
             {/* Left - Steps */}
             <div className="lg:sticky lg:top-32 lg:h-fit">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12">How it works</h2>
+              <h2 id="how-it-works-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12">How it works</h2>
               <div className="space-y-8 sm:space-y-12">
                 {[
                   { number: "01", title: "Define HR role requirements", desc: "Describe the HR position, skills, and cultural fit criteria you're seeking" },
@@ -505,10 +516,11 @@ export default function LandingPage() {
                 <div className="relative overflow-hidden">
                   <Image
                     src="/mockups/mockup-1.png"
-                    alt="UmukoziHR platform mockup 1"
+                    alt="UmukoziHR platform dashboard showing candidate search and AI-powered ranking features"
                     width={800}
                     height={600}
                     className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-umukozi-orange/5 to-umukozi-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -523,10 +535,11 @@ export default function LandingPage() {
                 <div className="relative overflow-hidden">
                   <Image
                     src="/mockups/mockup-2.png"
-                    alt="UmukoziHR platform mockup 2"
+                    alt="UmukoziHR candidate profile view with HR skills assessment and interview scheduling tools"
                     width={800}
                     height={600}
                     className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-umukozi-orange/5 to-umukozi-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -541,10 +554,11 @@ export default function LandingPage() {
                 <div className="relative overflow-hidden">
                   <Image
                     src="/mockups/mockup-3.png"
-                    alt="UmukoziHR platform mockup 3"
+                    alt="UmukoziHR analytics dashboard displaying hiring metrics and HR team performance insights"
                     width={800}
                     height={600}
                     className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-umukozi-orange/5 to-umukozi-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -758,8 +772,16 @@ export default function LandingPage() {
                 <button
                   className="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-start sm:items-center justify-between hover:bg-umukozi-orange/5 hover:text-umukozi-orange transition-all duration-300 focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange group"
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  aria-expanded={openFaq === index}
+                  aria-controls={`faq-answer-${index}`}
+                  aria-label={`Toggle FAQ: ${faq.question}`}
                 >
-                  <span className="font-medium text-gray-900 group-hover:text-umukozi-orange transition-colors duration-300 text-sm sm:text-base pr-4 flex-1">{faq.question}</span>
+                  <span 
+                    className="font-medium text-gray-900 group-hover:text-umukozi-orange transition-colors duration-300 text-sm sm:text-base pr-4 flex-1"
+                    id={`faq-question-${index}`}
+                  >
+                    {faq.question}
+                  </span>
                   {openFaq === index ? (
                     <Minus className="w-4 h-4 sm:w-5 sm:h-5 text-umukozi-orange transition-colors duration-300 flex-shrink-0 mt-0.5 sm:mt-0" />
                   ) : (
@@ -775,6 +797,9 @@ export default function LandingPage() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden px-4 sm:px-6 pb-3 sm:pb-4 border-l-4 border-l-umukozi-teal/20"
+                      id={`faq-answer-${index}`}
+                      role="region"
+                      aria-labelledby={`faq-question-${index}`}
                     >
                       <p className="text-gray-600 pl-2 text-sm sm:text-base leading-relaxed">{faq.answer}</p>
                     </motion.div>
@@ -846,6 +871,8 @@ export default function LandingPage() {
         )}
       </AnimatePresence>
 
+      </main>
+      
       {/* Footer */}
       <footer className="h-[100px] bg-white border-t border-gray-200 flex items-center justify-center">
         <p className="text-gray-500">© 2025 UmukoziHR. All rights reserved.</p>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">UmukoziHR - AI-Powered HR Solutions</title>
+  <defs>
+    <mask id="umask">
+      <rect width="260" height="260" rx="64" fill="#fff"/>
+      <rect x="56" y="-1" width="148" height="220" rx="44" fill="#000"/>
+    </mask>
+  </defs>
+  <g transform="translate(180,160)">
+    <rect width="260" height="260" rx="64" fill="#FF7A00" mask="url(#umask)"/>
+    <circle cx="130" cy="-46" r="38" fill="#FF7A00"/>
+  </g>
+  <g fill="#1E5A5A" font-family="Inter,system-ui,sans-serif" font-size="180" font-weight="700">
+    <text x="500" y="340">Umukozi</text>
+  </g>
+  <g fill="#FF7A00" font-family="Inter,system-ui,sans-serif" font-size="180" font-weight="700">
+    <text x="1270" y="340">HR</text>
+  </g>
+</svg>
