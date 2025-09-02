@@ -1,0 +1,584 @@
+{
+  "timestamp": "2025-09-02T02:24:38.994Z",
+  "summary": {
+    "total": 47,
+    "passed": 47,
+    "failed": 0,
+    "warnings": 0,
+    "successRate": "100.0%"
+  },
+  "requirements": {
+    "Brand consistency across all sections": [
+      {
+        "name": "Brand Color: Primary Orange",
+        "status": "PASS",
+        "message": "HSL value 24 100% 50% found in CSS",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.989Z"
+      },
+      {
+        "name": "Brand Color: Primary Teal",
+        "status": "PASS",
+        "message": "HSL value 180 50% 23% found in CSS",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.989Z"
+      },
+      {
+        "name": "Brand Color: Light Orange",
+        "status": "PASS",
+        "message": "HSL value 24 100% 70% found in CSS",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.989Z"
+      },
+      {
+        "name": "Brand Color: Light Teal",
+        "status": "PASS",
+        "message": "HSL value 180 30% 42% found in CSS",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.989Z"
+      },
+      {
+        "name": "Brand Gradient: Hero Gradient",
+        "status": "PASS",
+        "message": "Gradient definition found",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.989Z"
+      },
+      {
+        "name": "Brand Gradient: Cards Gradient",
+        "status": "PASS",
+        "message": "Gradient definition found",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.989Z"
+      },
+      {
+        "name": "Brand Gradient: Subtle Gradient",
+        "status": "PASS",
+        "message": "Gradient definition found",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.989Z"
+      },
+      {
+        "name": "Color Usage: bg-umukozi-orange",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.991Z"
+      },
+      {
+        "name": "Color Usage: text-umukozi-orange",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      },
+      {
+        "name": "Color Usage: hover:bg-umukozi-orange",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      },
+      {
+        "name": "Color Usage: bg-umukozi-teal",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      },
+      {
+        "name": "Color Usage: text-umukozi-teal",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      },
+      {
+        "name": "Color Usage: border-umukozi-orange",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      },
+      {
+        "name": "Color Usage: focus:outline-umukozi-orange",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      }
+    ],
+    "Interactive elements use appropriate brand colors": [
+      {
+        "name": "Color Usage: bg-umukozi-orange",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.991Z"
+      },
+      {
+        "name": "Color Usage: text-umukozi-orange",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      },
+      {
+        "name": "Color Usage: hover:bg-umukozi-orange",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      },
+      {
+        "name": "Color Usage: bg-umukozi-teal",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      },
+      {
+        "name": "Color Usage: text-umukozi-teal",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      },
+      {
+        "name": "Color Usage: border-umukozi-orange",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      },
+      {
+        "name": "Color Usage: focus:outline-umukozi-orange",
+        "status": "PASS",
+        "message": "Brand color class used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      },
+      {
+        "name": "Hover Effects",
+        "status": "PASS",
+        "message": "Hover effect classes found",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.993Z"
+      }
+    ],
+    "Logo functionality as home page link": [
+      {
+        "name": "File Existence: Logo Component",
+        "status": "PASS",
+        "message": "components/umukozi-logo.tsx exists",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.990Z"
+      },
+      {
+        "name": "Logo Alt Text",
+        "status": "PASS",
+        "message": "Proper alt text found",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.990Z"
+      },
+      {
+        "name": "Logo Responsive Sizing",
+        "status": "PASS",
+        "message": "Responsive sizing classes found",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.990Z"
+      },
+      {
+        "name": "Logo Home Link",
+        "status": "PASS",
+        "message": "Logo functions as home page link",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.990Z"
+      },
+      {
+        "name": "Logo Focus State",
+        "status": "PASS",
+        "message": "Brand-colored focus state found",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.991Z"
+      },
+      {
+        "name": "Logo Fallback",
+        "status": "PASS",
+        "message": "Fallback component implemented",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.991Z"
+      },
+      {
+        "name": "Logo Component Usage",
+        "status": "PASS",
+        "message": "UmukoziLogo component used",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.992Z"
+      }
+    ],
+    "Smooth animations and transitions": [
+      {
+        "name": "Motion Animations",
+        "status": "PASS",
+        "message": "Framer Motion animations found",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.993Z"
+      },
+      {
+        "name": "CSS Transitions",
+        "status": "PASS",
+        "message": "Transition classes found",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.993Z"
+      }
+    ],
+    "Responsive behavior of all brand elements": [
+      {
+        "name": "Logo Responsive Sizing",
+        "status": "PASS",
+        "message": "Responsive sizing classes found",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.990Z"
+      },
+      {
+        "name": "Mobile Breakpoints",
+        "status": "PASS",
+        "message": "Mobile-specific styles found",
+        "details": "",
+        "timestamp": "2025-09-02T02:24:38.993Z"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "name": "File Existence: Global CSS",
+      "status": "PASS",
+      "message": "app/globals.css exists",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.988Z"
+    },
+    {
+      "name": "Brand Color: Primary Orange",
+      "status": "PASS",
+      "message": "HSL value 24 100% 50% found in CSS",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.989Z"
+    },
+    {
+      "name": "Brand Color: Primary Teal",
+      "status": "PASS",
+      "message": "HSL value 180 50% 23% found in CSS",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.989Z"
+    },
+    {
+      "name": "Brand Color: Light Orange",
+      "status": "PASS",
+      "message": "HSL value 24 100% 70% found in CSS",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.989Z"
+    },
+    {
+      "name": "Brand Color: Light Teal",
+      "status": "PASS",
+      "message": "HSL value 180 30% 42% found in CSS",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.989Z"
+    },
+    {
+      "name": "Brand Gradient: Hero Gradient",
+      "status": "PASS",
+      "message": "Gradient definition found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.989Z"
+    },
+    {
+      "name": "Brand Gradient: Cards Gradient",
+      "status": "PASS",
+      "message": "Gradient definition found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.989Z"
+    },
+    {
+      "name": "Brand Gradient: Subtle Gradient",
+      "status": "PASS",
+      "message": "Gradient definition found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.989Z"
+    },
+    {
+      "name": "CSS Utility: bg-umukozi-orange",
+      "status": "PASS",
+      "message": "Utility class defined",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.990Z"
+    },
+    {
+      "name": "CSS Utility: text-umukozi-orange",
+      "status": "PASS",
+      "message": "Utility class defined",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.990Z"
+    },
+    {
+      "name": "CSS Utility: border-umukozi-orange",
+      "status": "PASS",
+      "message": "Utility class defined",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.990Z"
+    },
+    {
+      "name": "CSS Utility: bg-umukozi-teal",
+      "status": "PASS",
+      "message": "Utility class defined",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.990Z"
+    },
+    {
+      "name": "CSS Utility: text-umukozi-teal",
+      "status": "PASS",
+      "message": "Utility class defined",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.990Z"
+    },
+    {
+      "name": "CSS Utility: hover:bg-umukozi-orange",
+      "status": "PASS",
+      "message": "Utility class defined",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.990Z"
+    },
+    {
+      "name": "CSS Utility: hover:text-umukozi-orange",
+      "status": "PASS",
+      "message": "Utility class defined",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.990Z"
+    },
+    {
+      "name": "File Existence: Logo Component",
+      "status": "PASS",
+      "message": "components/umukozi-logo.tsx exists",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.990Z"
+    },
+    {
+      "name": "Logo Alt Text",
+      "status": "PASS",
+      "message": "Proper alt text found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.990Z"
+    },
+    {
+      "name": "Logo Responsive Sizing",
+      "status": "PASS",
+      "message": "Responsive sizing classes found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.990Z"
+    },
+    {
+      "name": "Logo Home Link",
+      "status": "PASS",
+      "message": "Logo functions as home page link",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.990Z"
+    },
+    {
+      "name": "Logo Focus State",
+      "status": "PASS",
+      "message": "Brand-colored focus state found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.991Z"
+    },
+    {
+      "name": "Logo Fallback",
+      "status": "PASS",
+      "message": "Fallback component implemented",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.991Z"
+    },
+    {
+      "name": "File Existence: Main Page Component",
+      "status": "PASS",
+      "message": "app/page.tsx exists",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.991Z"
+    },
+    {
+      "name": "Content: Hero Headline",
+      "status": "PASS",
+      "message": "\"Transform Your Hiring with AI-Powered HR Solutions\" found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.991Z"
+    },
+    {
+      "name": "Content: Hero Subtext",
+      "status": "PASS",
+      "message": "\"Connect with top talent faster using UmukoziHR\" found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.991Z"
+    },
+    {
+      "name": "Content: Primary CTA",
+      "status": "PASS",
+      "message": "\"Start Hiring Smarter\" found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.991Z"
+    },
+    {
+      "name": "Content: Secondary CTA",
+      "status": "PASS",
+      "message": "\"See Platform Demo\" found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.991Z"
+    },
+    {
+      "name": "Color Usage: bg-umukozi-orange",
+      "status": "PASS",
+      "message": "Brand color class used",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.991Z"
+    },
+    {
+      "name": "Color Usage: text-umukozi-orange",
+      "status": "PASS",
+      "message": "Brand color class used",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "Color Usage: hover:bg-umukozi-orange",
+      "status": "PASS",
+      "message": "Brand color class used",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "Color Usage: bg-umukozi-teal",
+      "status": "PASS",
+      "message": "Brand color class used",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "Color Usage: text-umukozi-teal",
+      "status": "PASS",
+      "message": "Brand color class used",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "Color Usage: border-umukozi-orange",
+      "status": "PASS",
+      "message": "Brand color class used",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "Color Usage: focus:outline-umukozi-orange",
+      "status": "PASS",
+      "message": "Brand color class used",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "Logo Component Usage",
+      "status": "PASS",
+      "message": "UmukoziLogo component used",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "Gradient Usage",
+      "status": "PASS",
+      "message": "Brand gradients used",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "File Existence: Layout Component",
+      "status": "PASS",
+      "message": "app/layout.tsx exists",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "Metadata: Page Title",
+      "status": "PASS",
+      "message": "\"UmukoziHR - AI-Powered HR Solutions\" found in metadata",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "Metadata: Description",
+      "status": "PASS",
+      "message": "\"Transform your hiring with UmukoziHR\" found in metadata",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "Metadata: Keywords",
+      "status": "PASS",
+      "message": "\"HR solutions\" found in metadata",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.992Z"
+    },
+    {
+      "name": "High Contrast Support",
+      "status": "PASS",
+      "message": "High contrast media query found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.993Z"
+    },
+    {
+      "name": "Skip to Main Content",
+      "status": "PASS",
+      "message": "Skip link styles found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.993Z"
+    },
+    {
+      "name": "Focus States",
+      "status": "PASS",
+      "message": "Brand-colored focus states defined",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.993Z"
+    },
+    {
+      "name": "Mobile Breakpoints",
+      "status": "PASS",
+      "message": "Mobile-specific styles found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.993Z"
+    },
+    {
+      "name": "Tablet Optimizations",
+      "status": "PASS",
+      "message": "Tablet-specific brand spacing found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.993Z"
+    },
+    {
+      "name": "Motion Animations",
+      "status": "PASS",
+      "message": "Framer Motion animations found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.993Z"
+    },
+    {
+      "name": "CSS Transitions",
+      "status": "PASS",
+      "message": "Transition classes found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.993Z"
+    },
+    {
+      "name": "Hover Effects",
+      "status": "PASS",
+      "message": "Hover effect classes found",
+      "details": "",
+      "timestamp": "2025-09-02T02:24:38.993Z"
+    }
+  ]
+}

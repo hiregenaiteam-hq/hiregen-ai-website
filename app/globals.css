@@ -96,6 +96,14 @@ body {
     border-color: hsl(var(--umukozi-orange));
   }
   
+  .hover\:bg-umukozi-teal:hover {
+    background-color: hsl(var(--umukozi-teal));
+  }
+  
+  .hover\:text-umukozi-teal:hover {
+    color: hsl(var(--umukozi-teal));
+  }
+  
   /* Responsive Brand Utilities */
   @media (max-width: 640px) {
     .text-umukozi-orange,
@@ -152,6 +160,14 @@ body {
   
   .focus\:outline-umukozi-teal:focus {
     outline: 2px solid hsl(var(--umukozi-teal));
+    outline-offset: 2px;
+  }
+  
+  .focus\:outline-2:focus {
+    outline-width: 2px;
+  }
+  
+  .focus\:outline-offset-2:focus {
     outline-offset: 2px;
   }
   
