@@ -113,7 +113,7 @@ export default async function Image() {
               lineHeight: 1.3,
             }}
           >
-            Get qualified HR candidates in under 1 hour
+            Get qualified candidates in under 24 hours
           </p>
 
           {/* Features */}

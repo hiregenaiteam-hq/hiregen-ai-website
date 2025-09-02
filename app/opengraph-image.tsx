@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'UmukoziHR - AI-Powered HR Solutions'
+export const alt = 'UmukoziHR - HR powered by AI Agents'
 export const size = {
   width: 1200,
   height: 630,
@@ -100,7 +100,7 @@ export default async function Image() {
               maxWidth: '900px',
             }}
           >
-            AI-Powered HR Solutions
+            HR powered by AI Agents
           </h1>
 
           {/* Subtitle */}
@@ -113,7 +113,7 @@ export default async function Image() {
               lineHeight: 1.3,
             }}
           >
-            Transform your hiring with intelligent recruiting platform
+            Automate Your entire Hiring Process with AI Agents
           </p>
 
           {/* CTA */}
@@ -129,7 +129,7 @@ export default async function Image() {
               fontWeight: 'bold',
             }}
           >
-            Get Qualified Candidates in &lt; 1 Hour
+            Get Qualified Candidates in &lt; 24 Hours
           </div>
         </div>
       </div>

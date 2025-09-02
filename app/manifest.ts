@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'UmukoziHR - AI-Powered HR Solutions',
+    name: 'UmukoziHR - HR powered by AI Agents',
     short_name: 'UmukoziHR',
-    description: 'Transform your hiring with UmukoziHR\'s intelligent recruiting platform. Get qualified HR candidates in under 1 hour.',
+    description: 'Transform your hiring with UmukoziHR\'s intelligent recruiting platform. Get qualified candidates in under 24 hours.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
