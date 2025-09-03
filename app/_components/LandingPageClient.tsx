@@ -234,9 +234,22 @@ function HowItWorksSection() {
       if (!sectionElement) return
 
       const rect = sectionElement.getBoundingClientRect()
-      const isInSection = rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5
+      const viewportHeight = window.innerHeight
 
-      if (!isInSection) return
+      // Only capture scroll when section is properly in view (at least 80% visible)
+      const sectionHeight = rect.height
+      const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0)
+      const visibilityRatio = visibleHeight / sectionHeight
+
+      // Section must be at least 80% visible and fully entered to capture scroll
+      const isFullyInSection = visibilityRatio >= 0.8 && rect.top <= viewportHeight * 0.1
+
+      // Check if user is trying to scroll out of section
+      const isScrollingOutTop = e.deltaY < 0 && activeStep === 0 && rect.top >= -50
+      const isScrollingOutBottom = e.deltaY > 0 && activeStep === steps.length - 1 && rect.bottom <= viewportHeight + 50
+
+      // Don't capture scroll if user is scrolling out or section isn't fully visible
+      if (!isFullyInSection || isScrollingOutTop || isScrollingOutBottom) return
 
       // Prevent default scroll behavior when in section
       e.preventDefault()
@@ -251,24 +264,14 @@ function HowItWorksSection() {
         // Scrolling down
         if (activeStep < steps.length - 1) {
           setActiveStep(prev => prev + 1)
-        } else {
-          // At last step, allow scrolling to next section
-          const nextSection = sectionElement.nextElementSibling as HTMLElement
-          if (nextSection) {
-            nextSection.scrollIntoView({ behavior: 'smooth' })
-          }
         }
+        // If at last step, do nothing - let user scroll out naturally
       } else if (e.deltaY < 0) {
         // Scrolling up
         if (activeStep > 0) {
           setActiveStep(prev => prev - 1)
-        } else {
-          // At first step, allow scrolling to previous section
-          const prevSection = sectionElement.previousElementSibling as HTMLElement
-          if (prevSection) {
-            prevSection.scrollIntoView({ behavior: 'smooth' })
-          }
         }
+        // If at first step, do nothing - let user scroll out naturally
       }
 
       setTimeout(() => {
