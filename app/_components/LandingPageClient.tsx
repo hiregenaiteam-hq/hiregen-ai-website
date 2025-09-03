@@ -118,32 +118,34 @@ const comparisonData = [
 
 const faqs = [
   {
-    question: "How does UmukoziHR find HR professionals?",
+    question: "How does UmukoziHR find candidates?",
     answer:
-      "Our AI searches across millions of HR professional profiles from LinkedIn, industry networks, and professional platforms to find candidates that match your specific HR department requirements and company culture.",
+      "Our AI Agents search across millions of profiles on LinkedIn, job boards, and professional networks. With auto-outreach and smart ranking, only the most relevant candidates enter your pipeline.",
   },
   {
-    question: "What HR-specific features are included in the Growth Plan?",
+    question: "What features are included in the Growth Plan?",
     answer:
-      "Unlimited HR talent searches, AI-powered candidate ranking for HR roles, automated outreach to HR professionals, built-in HR competency assessments, interview scheduling tools, and ATS integration for seamless HR workflow management.",
+      "Unlimited talent searches, AI-powered ranking, automated outreach, culture-fit and skills assessments, interview scheduling, onboarding support, and integrations with leading ATS platforms.",
   },
   {
-    question: "How accurate is the AI scoring for HR candidates?",
+    question: "How accurate is the AI scoring?",
     answer:
-      "Our AI achieves 85%+ accuracy in predicting HR candidate fit based on HR expertise, people management skills, compliance knowledge, and cultural alignment factors specific to HR departments.",
+      "Our AI consistently delivers 85%+ accuracy when ranking candidates — factoring in skills, experience, role fit, and cultural alignment. Accuracy improves as the system learns from your hiring patterns.",
   },
   {
-    question: "Can I integrate UmukoziHR with my existing HR systems?",
+    question: "Can I integrate UmukoziHR with my existing systems?",
     answer:
-      "Yes, we support integrations with popular HR platforms and ATS systems like Greenhouse, Lever, Workday, and BambooHR through our API, ensuring seamless workflow integration with your existing HR tech stack.",
+      "Yes. We integrate with popular ATS and HR platforms like Greenhouse, Lever, Workday, and BambooHR through our API, ensuring seamless workflow with your existing stack.",
   },
   {
-    question: "Do you offer a free trial for HR teams?",
-    answer: "We offer a 14-day free trial with full access to all HR-focused features. No credit card required to get started, and you can invite your entire HR team to evaluate the platform.",
+    question: "Do you offer a free trial?",
+    answer:
+      "Yes. You can start with a 14-day free trial that includes full access to all features. No credit card required, and you can invite your entire hiring team to evaluate the platform.",
   },
   {
-    question: "How quickly can HR teams see qualified candidates?",
-    answer: "Most HR teams see their first qualified HR candidates within 1 hour of posting role requirements. Our AI specifically understands HR competencies and can quickly identify professionals with the right mix of HR expertise and cultural fit.",
+    question: "How quickly will I see qualified candidates?",
+    answer:
+      "Most teams see top-ranked candidates within 1 hour of posting a role. Our AI Agents handle sourcing, screening, and outreach — guaranteeing you a hire in less than 24 hours.",
   },
 ]
 
@@ -838,7 +840,10 @@ export default function LandingPageClient() {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-umukozi-orange/3 to-umukozi-teal/3 relative overflow-hidden">
+        <section
+          id="pricing"
+          className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-umukozi-orange/3 to-umukozi-teal/3 relative overflow-hidden"
+        >
           {/* Subtle brand accent elements */}
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-20 right-1/4 w-40 h-40 bg-umukozi-orange/10 rounded-full blur-2xl"></div>
@@ -851,76 +856,146 @@ export default function LandingPageClient() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Simple, transparent pricing</h2>
-              <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12">Choose the plan that fits your hiring needs</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Simple, outcome-based pricing
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12">
+                Pay for results — AI Agents that source, screen, schedule, and onboard.
+                Hire in under 24 hours.
+              </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 justify-center">
-                {/* Startup Plan */}
+                {/* Launch Plan */}
                 <Card className="w-full max-w-[400px] mx-auto bg-white/15 backdrop-blur-lg border-2 border-transparent bg-gradient-to-br from-white/25 to-white/10 rounded-xl sm:rounded-2xl shadow-2xl relative overflow-hidden group hover:border-umukozi-orange/30 transition-all duration-500">
-                  {/* Gradient border effect */}
                   <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-umukozi-orange/20 via-transparent to-umukozi-teal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   <CardContent className="p-6 sm:p-8 text-center relative z-10">
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Startup</h3>
-                    <div className="text-3xl sm:text-4xl font-bold text-umukozi-orange mb-1">$299</div>
-                    <div className="text-gray-600 mb-4 sm:mb-6">per month</div>
-                    <div className="text-base sm:text-lg font-medium text-gray-900 mb-4 sm:mb-6">20 AI-powered searches/mo</div>
-                    <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 text-left">
-                      <div className="flex items-center space-x-2 sm:space-x-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-umukozi-orange flex-shrink-0" /><span className="text-sm sm:text-base text-gray-700">Basic candidate profiles</span></div>
-                      <div className="flex items-center space-x-2 sm:space-x-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-umukozi-orange flex-shrink-0" /><span className="text-sm sm:text-base text-gray-700">Email support</span></div>
-                      <div className="flex items-center space-x-2 sm:space-x-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-umukozi-orange flex-shrink-0" /><span className="text-sm sm:text-base text-gray-700">Search history</span></div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                      Launch
+                    </h3>
+                    <div className="text-3xl sm:text-4xl font-bold text-umukozi-orange mb-1">
+                      $299
                     </div>
-                    <Button className="w-full bg-umukozi-orange hover:bg-umukozi-orange-light text-white rounded-xl py-3 focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange transition-colors text-sm sm:text-base" onClick={clickPopup}>Start with Startup</Button>
+                    <div className="text-gray-600 mb-4 sm:mb-6">per month</div>
+                    <div className="text-base sm:text-lg font-medium text-gray-900 mb-4 sm:mb-6">
+                      1 active role • up to 2 hires/mo
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 text-left">
+                      {[
+                        "AI Agents: sourcing + auto-outreach",
+                        "Smart ranking & instant shortlists",
+                        "One-click scheduling & reminders",
+                        "Built-in culture/skills assessments",
+                        "Offer letter templates & lite onboarding",
+                      ].map((t, i) => (
+                        <div
+                          key={i}
+                          className="flex items-center space-x-2 sm:space-x-3"
+                        >
+                          <Check className="w-4 h-4 sm:w-5 sm:h-5 text-umukozi-orange flex-shrink-0" />
+                          <span className="text-sm sm:text-base text-gray-700">{t}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button
+                      className="w-full bg-umukozi-orange hover:bg-umukozi-orange-light text-white rounded-xl py-3 focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange transition-colors text-sm sm:text-base"
+                      onClick={clickPopup}
+                    >
+                      Start with Launch
+                    </Button>
                   </CardContent>
                 </Card>
 
                 {/* Scale Plan */}
                 <Card className="w-full max-w-[400px] mx-auto bg-white/15 backdrop-blur-lg border-2 border-transparent bg-gradient-to-br from-white/25 to-white/10 rounded-2xl shadow-2xl relative overflow-hidden group hover:border-umukozi-orange/30 transition-all duration-500">
-                  {/* Gradient border effect */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-umukozi-orange/20 via-transparent to-umukozi-teal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   <CardContent className="p-8 text-center relative z-10">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">Scale</h3>
-                    <div className="text-4xl font-bold text-umukozi-orange mb-1">$399</div>
-                    <div className="text-gray-600 mb-6">per month</div>
-                    <div className="text-lg font-medium text-gray-900 mb-6">50 AI-powered searches/mo</div>
-                    <div className="space-y-3 mb-8 text-left">
-                      <div className="flex items-center space-x-3"><Check className="w-5 h-5 text-umukozi-orange" /><span className="text-gray-700">Full candidate profiles with AI insights</span></div>
-                      <div className="flex items-center space-x-3"><Check className="w-5 h-5 text-umukozi-orange" /><span className="text-gray-700">Priority support</span></div>
-                      <div className="flex items-center space-x-3"><Check className="w-5 h-5 text-umukozi-orange" /><span className="text-gray-700">Team collaboration</span></div>
-                      <div className="flex items-center space-x-3"><Check className="w-5 h-5 text-umukozi-orange" /><span className="text-gray-700">Advanced filters</span></div>
-                      <div className="flex items-center space-x-3"><Check className="w-5 h-5 text-umukozi-orange" /><span className="text-gray-700">Export capabilities</span></div>
+                    <div className="text-4xl font-bold text-umukozi-orange mb-1">
+                      $399
                     </div>
-                    <div className="inline-block bg-umukozi-orange text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Most popular for SMEs & Growth Startups</div>
-                    <Button className="w-full bg-umukozi-orange hover:bg-umukozi-orange-light text-white rounded-xl py-3 focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange transition-colors" onClick={clickPopup}>Start with Scale</Button>
+                    <div className="text-gray-600 mb-6">per month</div>
+                    <div className="text-lg font-medium text-gray-900 mb-6">
+                      3 active roles • up to 6 hires/mo
+                    </div>
+                    <div className="space-y-3 mb-8 text-left">
+                      {[
+                        "Everything in Launch",
+                        "Priority outreach & faster SLAs",
+                        "Multi-round interview flows",
+                        "Team collaboration & approvals",
+                        "ATS integrations (Greenhouse/Lever/Workday/BambooHR)",
+                      ].map((t, i) => (
+                        <div key={i} className="flex items-center space-x-3">
+                          <Check className="w-5 h-5 text-umukozi-orange" />
+                          <span className="text-gray-700">{t}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="inline-block bg-umukozi-orange text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                      Most popular for growing teams
+                    </div>
+                    <Button
+                      className="w-full bg-umukozi-orange hover:bg-umukozi-orange-light text-white rounded-xl py-3 focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange transition-colors"
+                      onClick={clickPopup}
+                    >
+                      Start with Scale
+                    </Button>
                   </CardContent>
                 </Card>
 
                 {/* Enterprise Plan */}
                 <Card className="w-full max-w-[400px] mx-auto bg-white/15 backdrop-blur-lg border-2 border-transparent bg-gradient-to-br from-white/25 to-white/10 rounded-2xl shadow-2xl relative overflow-hidden group hover:border-umukozi-orange/30 transition-all duration-500">
-                  {/* Gradient border effect */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-umukozi-orange/20 via-transparent to-umukozi-teal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   <CardContent className="p-8 text-center relative z-10">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
-                    <div className="text-4xl font-bold text-umukozi-orange mb-1">Custom</div>
-                    <div className="text-gray-600 mb-6">Contact Sales</div>
-                    <div className="text-lg font-medium text-gray-900 mb-6">Unlimited AI-powered searches</div>
-                    <div className="space-y-3 mb-8 text-left">
-                      <div className="flex items-center space-x-3"><Check className="w-5 h-5 text-umukozi-orange" /><span className="text-gray-700">Custom AI training</span></div>
-                      <div className="flex items-center space-x-3"><Check className="w-5 h-5 text-umukozi-orange" /><span className="text-gray-700">Dedicated account manager</span></div>
-                      <div className="flex items-center space-x-3"><Check className="w-5 h-5 text-umukozi-orange" /><span className="text-gray-700">API access</span></div>
-                      <div className="flex items-center space-x-3"><Check className="w-5 h-5 text-umukozi-orange" /><span className="text-gray-700">Custom integrations</span></div>
-                      <div className="flex items-center space-x-3"><Check className="w-5 h-5 text-umukozi-orange" /><span className="text-gray-700">Advanced analytics</span></div>
-                      <div className="flex items-center space-x-3"><Check className="w-5 h-5 text-umukozi-orange" /><span className="text-gray-700">White-label options</span></div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      Enterprise
+                    </h3>
+                    <div className="text-4xl font-bold text-umukozi-orange mb-1">
+                      Custom
                     </div>
-                    <Button className="w-full bg-umukozi-orange hover:bg-umukozi-orange-light text-white rounded-xl py-3 focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange transition-colors" onClick={clickPopup}>Contact Sales</Button>
+                    <div className="text-gray-600 mb-6">Contact Sales</div>
+                    <div className="text-lg font-medium text-gray-900 mb-6">
+                      Unlimited roles • volume hiring
+                    </div>
+                    <div className="space-y-3 mb-8 text-left">
+                      {[
+                        "Dedicated AI Agent tuning & private models",
+                        "Enterprise-grade compliance & SSO",
+                        "Custom integrations & API",
+                        "Advanced analytics & hiring dashboards",
+                        "White-label options & regional rollout",
+                        "Dedicated account manager",
+                      ].map((t, i) => (
+                        <div key={i} className="flex items-center space-x-3">
+                          <Check className="w-5 h-5 text-umukozi-orange" />
+                          <span className="text-gray-700">{t}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button
+                      className="w-full bg-umukozi-orange hover:bg-umukozi-orange-light text-white rounded-xl py-3 focus:outline-2 focus:outline-offset-2 focus:outline-umukozi-orange transition-colors"
+                      onClick={clickPopup}
+                    >
+                      Contact Sales
+                    </Button>
                   </CardContent>
                 </Card>
               </div>
+
+              <p className="mt-8 sm:mt-12 text-sm text-gray-600">
+                All plans include: AI-driven sourcing, auto-outreach, smart ranking,
+                assessments, scheduling, and onboarding.
+                <span className="ml-2 font-medium text-gray-800">
+                  Hire in under 24 hours — or we keep working at no extra cost.
+                </span>
+              </p>
             </motion.div>
           </div>
         </section>
+
 
         {/* FAQ */}
         <section id="faq" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-umukozi-teal/5 to-umukozi-orange/5 relative overflow-hidden">
