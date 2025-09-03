@@ -38,33 +38,33 @@ const socialProofLogos = [
 const features = [
   {
     icon: Search,
-    title: "Sourcing AI",
-    description: "Discover top HR talent from millions of profiles across LinkedIn, industry networks, and professional platforms.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Auto Outreach",
-    description: "Send personalized recruitment messages automatically to qualified HR professionals and candidates.",
+    title: "Sourcing",
+    description: "AI Agents scan talent pools, auto-reach out to qualified candidates, and pull the best fits into your pipeline within minutes.",
   },
   {
     icon: BarChart3,
-    title: "Smart Ranking",
-    description: "Rank candidates by cultural fit, HR expertise, and role compatibility using advanced AI algorithms.",
+    title: "Screening",
+    description: "Automated profile checks, smart ranking, and background signals — no CV pile-ups, just prioritized matches ready to move forward.",
   },
   {
     icon: Code,
-    title: "Built-in Assessments",
-    description: "HR-specific skill assessments and behavioral tests integrated directly into your hiring workflow.",
-  },
-  {
-    icon: Clock,
-    title: "Live Score Updates",
-    description: "Real-time candidate scoring updates as new HR experience and performance data becomes available.",
+    title: "Assessments",
+    description: "Culture-fit and role-specific tests run automatically, with AI scoring built into the workflow.",
   },
   {
     icon: Calendar,
-    title: "One-click Scheduling",
-    description: "Streamlined interview scheduling with HR team calendar integration and automated reminders.",
+    title: "Scheduling",
+    description: "One-click interview booking, calendar sync, and smart reminders handled end-to-end by AI Agents.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Interviews",
+    description: "AI-assisted interview flows across multiple rounds — structured, unbiased, and tracked in real time.",
+  },
+  {
+    icon: Clock,
+    title: "Onboarding",
+    description: "From offer letters to first-day prep, our agents streamline onboarding so your hire is productive fast.",
   },
 ]
 
@@ -159,6 +159,44 @@ function useMeasure() {
   })
 
   return [ref, bounds] as const
+}
+
+// Animated Value Proposition Component
+function AnimatedValueProp() {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0)
+  const animatedWords = ["sourcing", "screening", "scheduling", "interviews", "technical fit", "culture-fit", "onboarding"]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prev) => (prev + 1) % animatedWords.length)
+    }, 1500) // 1.5 seconds
+
+    return () => clearInterval(interval)
+  }, [animatedWords.length])
+
+  return (
+    <p className="text-xl sm:text-2xl md:text-3xl text-gray-900 leading-relaxed italic">
+      With one prompt, UmukoziHR deploys AI Agents to handle{" "}
+      <span className="inline-block relative overflow-hidden h-[1.4em] min-w-[180px] align-bottom">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={currentWordIndex}
+            initial={{ y: "100%" }}
+            animate={{ y: "0%" }}
+            exit={{ y: "-100%" }}
+            transition={{
+              duration: 0.5,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+            className="absolute top-0 left-0 w-full h-full flex items-center font-bold not-italic text-umukozi-orange whitespace-nowrap"
+          >
+            {animatedWords[currentWordIndex]}
+          </motion.span>
+        </AnimatePresence>
+      </span>
+      {" "}— delivering your next hire in under 24 hours.
+    </p>
+  )
 }
 
 export default function LandingPageClient() {
@@ -331,8 +369,8 @@ export default function LandingPageClient() {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>      
-{/* Floating Gradient Blobs */}
+      </nav>
+      {/* Floating Gradient Blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-umukozi-orange/20 rounded-full blur-2xl sm:blur-3xl"
@@ -361,7 +399,7 @@ export default function LandingPageClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              Transform Your Hiring with AI-Powered HR Solutions
+              Automate Your Entire Hiring Workflow With AI Agents
             </motion.h1>
 
             <motion.h2
@@ -449,8 +487,8 @@ export default function LandingPageClient() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 id="features-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything HR teams need to hire smarter</h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">AI-powered HR solutions that transform your recruitment process</p>
+              <h2 id="features-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">You Can Finally Hire On Autopilot!</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">AI agents streamline hiring end-to-end... Simple, Fast, and Scalable</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
@@ -483,6 +521,19 @@ export default function LandingPageClient() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Value Proposition Banner */}
+            <motion.div
+              className="mt-16 sm:mt-20 text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="max-w-4xl mx-auto bg-gradient-to-r from-umukozi-orange/10 via-white/20 to-umukozi-teal/10 backdrop-blur-lg rounded-2xl p-8 sm:p-12 border border-white/30 shadow-xl">
+                <AnimatedValueProp />
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -801,8 +852,8 @@ export default function LandingPageClient() {
                   <motion.div
                     key={index}
                     className={`bg-white rounded-lg sm:rounded-xl border-2 transition-all duration-300 overflow-hidden relative ${isOpen
-                        ? 'border-umukozi-teal shadow-lg shadow-umukozi-teal/10'
-                        : 'border-gray-200 hover:border-umukozi-orange/30 hover:shadow-md'
+                      ? 'border-umukozi-teal shadow-lg shadow-umukozi-teal/10'
+                      : 'border-gray-200 hover:border-umukozi-orange/30 hover:shadow-md'
                       }`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

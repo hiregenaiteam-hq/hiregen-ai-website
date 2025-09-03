@@ -48,7 +48,7 @@ Design Specifications:
 ```
 Design Specifications:
 - Background: Gradient from light orange to light teal with floating animated blobs
-- Headline: Updated to "Transform Your Hiring with AI-Powered HR Solutions"
+- Headline: Updated to "Automate Your Entire Hiring Workflow With AI Agents"
 - Subheading: "Connect with top talent faster using UmukoziHR's intelligent recruiting platform"
 - Primary CTA: Orange button "Start Hiring Smarter"
 - Secondary CTA: Teal outline button "See Platform Demo"
@@ -149,7 +149,7 @@ interface BrandColors {
 interface ContentMapping {
   brandName: 'UmukoziHR';
   tagline: 'AI-Powered HR Solutions';
-  heroHeadline: 'Transform Your Hiring with AI-Powered HR Solutions';
+  heroHeadline: 'Automate Your Entire Hiring Workflow With AI Agents';
   heroSubtext: 'Connect with top talent faster using UmukoziHR\'s intelligent recruiting platform';
   ctaPrimary: 'Start Hiring Smarter';
   ctaSecondary: 'See Platform Demo';

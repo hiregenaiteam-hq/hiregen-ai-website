@@ -359,7 +359,7 @@ export default function LandingPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              Transform Your Hiring with AI-Powered HR Solutions
+              Automate Your Entire Hiring Workflow With AI Agents
             </motion.h1>
 
             <motion.h2
