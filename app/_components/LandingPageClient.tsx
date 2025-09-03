@@ -551,10 +551,10 @@ export default function LandingPageClient() {
                 <h2 id="how-it-works-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12">How it works</h2>
                 <div className="space-y-8 sm:space-y-12">
                   {[
-                    { number: "01", title: "Define HR role requirements", desc: "Describe the HR position, skills, and cultural fit criteria you're seeking" },
-                    { number: "02", title: "Review AI-ranked candidates", desc: "Get HR professionals scored by expertise, experience, and role compatibility" },
-                    { number: "03", title: "Connect with top talent", desc: "1-click interview scheduling and personalized outreach to HR candidates" },
-                    { number: "04", title: "Complete the hire", desc: "Send offer letters and onboard your new HR team member seamlessly" },
+                    { number: "01", title: "Define the role", desc: "One prompt with the job requirements, skills, and culture fit you need." },
+                    { number: "02", title: "AI Agents go to work", desc: "Instant sourcing, auto-outreach, and smart ranking across talent pools." },
+                    { number: "03", title: "Review & interview", desc: "Top candidates pre-screened, assessed, and scheduled for interviews automatically." },
+                    { number: "04", title: "Hire in under 24h", desc: "Send the offer, trigger onboarding, and have your new team member ready to go." },
                   ].map((step, index) => (
                     <motion.div
                       key={step.number}
