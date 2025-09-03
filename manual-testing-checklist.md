@@ -14,7 +14,7 @@ This checklist validates all requirements for the final integration and testing 
 - [ ] Mobile menu displays properly with brand colors
 
 #### Hero Section
-- [ ] Updated headline: "Transform Your Hiring with AI-Powered HR Solutions"
+- [ ] Updated headline: "Automate Your Entire Hiring Workflow With AI Agents"
 - [ ] Updated subtext mentions UmukoziHR
 - [ ] Primary CTA button: "Start Hiring Smarter" (orange)
 - [ ] Secondary CTA button: "See Platform Demo" (teal outline)

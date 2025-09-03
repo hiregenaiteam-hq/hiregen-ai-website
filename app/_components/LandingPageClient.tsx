@@ -38,33 +38,33 @@ const socialProofLogos = [
 const features = [
   {
     icon: Search,
-    title: "Sourcing AI",
-    description: "Discover top HR talent from millions of profiles across LinkedIn, industry networks, and professional platforms.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Auto Outreach",
-    description: "Send personalized recruitment messages automatically to qualified HR professionals and candidates.",
+    title: "Sourcing",
+    description: "AI Agents scan talent pools, auto-reach out to qualified candidates, and pull the best fits into your pipeline within minutes.",
   },
   {
     icon: BarChart3,
-    title: "Smart Ranking",
-    description: "Rank candidates by cultural fit, HR expertise, and role compatibility using advanced AI algorithms.",
+    title: "Screening",
+    description: "Automated profile checks, smart ranking, and background signals — no CV pile-ups, just prioritized matches ready to move forward.",
   },
   {
     icon: Code,
-    title: "Built-in Assessments",
-    description: "HR-specific skill assessments and behavioral tests integrated directly into your hiring workflow.",
-  },
-  {
-    icon: Clock,
-    title: "Live Score Updates",
-    description: "Real-time candidate scoring updates as new HR experience and performance data becomes available.",
+    title: "Assessments",
+    description: "Culture-fit and role-specific tests run automatically, with AI scoring built into the workflow.",
   },
   {
     icon: Calendar,
-    title: "One-click Scheduling",
-    description: "Streamlined interview scheduling with HR team calendar integration and automated reminders.",
+    title: "Scheduling",
+    description: "One-click interview booking, calendar sync, and smart reminders handled end-to-end by AI Agents.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Interviews",
+    description: "AI-assisted interview flows across multiple rounds — structured, unbiased, and tracked in real time.",
+  },
+  {
+    icon: Clock,
+    title: "Onboarding",
+    description: "From offer letters to first-day prep, our agents streamline onboarding so your hire is productive fast.",
   },
 ]
 
@@ -159,6 +159,246 @@ function useMeasure() {
   })
 
   return [ref, bounds] as const
+}
+
+// How It Works Section with synchronized step-image animation
+function HowItWorksSection() {
+  const [activeStep, setActiveStep] = useState(0)
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([])
+  const lastScrollTime = useRef(0)
+  const scrollCooldown = 800 // Cooldown period in milliseconds
+
+  const steps = [
+    {
+      number: "01",
+      title: "Define the role",
+      desc: "One prompt with the job requirements, skills, and culture fit you need.",
+      image: "/mockups/mockup-1.png",
+      alt: "UmukoziHR platform dashboard showing role definition and requirements setup"
+    },
+    {
+      number: "02",
+      title: "AI Agents go to work",
+      desc: "Instant sourcing, auto-outreach, and smart ranking across talent pools.",
+      image: "/mockups/mockup-2.png",
+      alt: "UmukoziHR AI agents sourcing and ranking candidates automatically"
+    },
+    {
+      number: "03",
+      title: "Review & interview",
+      desc: "Top candidates pre-screened, assessed, and scheduled for interviews automatically.",
+      image: "/mockups/mockup-3.png",
+      alt: "UmukoziHR interview scheduling and candidate assessment interface"
+    },
+    {
+      number: "04",
+      title: "Hire in under 24h",
+      desc: "Send the offer, trigger onboarding, and have your new team member ready to go.",
+      image: "/mockups/mockup-1.png", // You can change this to a different mockup if available
+      alt: "UmukoziHR onboarding and offer management dashboard"
+    },
+  ]
+
+  useEffect(() => {
+    const observers = stepRefs.current.map((ref, index) => {
+      if (!ref) return null
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            const now = Date.now()
+            if (now - lastScrollTime.current > scrollCooldown) {
+              setActiveStep(index)
+              lastScrollTime.current = now
+            }
+          }
+        },
+        { threshold: 0.7, rootMargin: '-10% 0px -10% 0px' }
+      )
+
+      observer.observe(ref)
+      return observer
+    })
+
+    return () => {
+      observers.forEach(observer => observer?.disconnect())
+    }
+  }, [])
+
+  // Handle controlled scroll navigation
+  useEffect(() => {
+    let isScrolling = false
+
+    const handleWheel = (e: WheelEvent) => {
+      const sectionElement = document.getElementById('how-it-works-section')
+      if (!sectionElement) return
+
+      const rect = sectionElement.getBoundingClientRect()
+      const viewportHeight = window.innerHeight
+
+      // Only capture scroll when section is properly in view (at least 80% visible)
+      const sectionHeight = rect.height
+      const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0)
+      const visibilityRatio = visibleHeight / sectionHeight
+
+      // Section must be at least 80% visible and fully entered to capture scroll
+      const isFullyInSection = visibilityRatio >= 0.8 && rect.top <= viewportHeight * 0.1
+
+      // Check if user is trying to scroll out of section
+      const isScrollingOutTop = e.deltaY < 0 && activeStep === 0 && rect.top >= -50
+      const isScrollingOutBottom = e.deltaY > 0 && activeStep === steps.length - 1 && rect.bottom <= viewportHeight + 50
+
+      // Don't capture scroll if user is scrolling out or section isn't fully visible
+      if (!isFullyInSection || isScrollingOutTop || isScrollingOutBottom) return
+
+      // Prevent default scroll behavior when in section
+      e.preventDefault()
+
+      const now = Date.now()
+      if (now - lastScrollTime.current < scrollCooldown || isScrolling) return
+
+      isScrolling = true
+      lastScrollTime.current = now
+
+      if (e.deltaY > 0) {
+        // Scrolling down
+        if (activeStep < steps.length - 1) {
+          setActiveStep(prev => prev + 1)
+        }
+        // If at last step, do nothing - let user scroll out naturally
+      } else if (e.deltaY < 0) {
+        // Scrolling up
+        if (activeStep > 0) {
+          setActiveStep(prev => prev - 1)
+        }
+        // If at first step, do nothing - let user scroll out naturally
+      }
+
+      setTimeout(() => {
+        isScrolling = false
+      }, scrollCooldown)
+    }
+
+    window.addEventListener('wheel', handleWheel, { passive: false })
+    return () => window.removeEventListener('wheel', handleWheel)
+  }, [activeStep, steps.length])
+
+  return (
+    <section id="how-it-works-section" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-umukozi-orange/5 to-umukozi-teal/5 relative overflow-hidden" aria-labelledby="how-it-works-heading">
+      {/* Subtle brand accent pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-10 right-10 w-32 h-32 bg-umukozi-orange/10 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-20 left-20 w-40 h-40 bg-umukozi-teal/10 rounded-full blur-2xl"></div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
+          {/* Left - Steps */}
+          <div className="lg:sticky lg:top-32 lg:h-fit">
+            <h2 id="how-it-works-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12">How it works</h2>
+            <div className="space-y-8 sm:space-y-12 relative">
+              {/* Continuous connecting line */}
+              <div className="absolute left-5 sm:left-6 top-6 bottom-6 w-0.5 bg-gradient-to-b from-umukozi-teal via-umukozi-teal to-umukozi-teal-light opacity-20" />
+
+              {steps.map((step, index) => (
+                <motion.div
+                  key={step.number}
+                  ref={el => { stepRefs.current[index] = el }}
+                  className="flex items-start space-x-4 sm:space-x-6 relative"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold shadow-lg transition-all duration-500 relative z-10 text-sm sm:text-base flex-shrink-0 ${activeStep === index
+                    ? 'bg-gradient-to-br from-umukozi-orange to-umukozi-orange-light text-white scale-110 shadow-xl'
+                    : 'bg-white text-umukozi-orange border-2 border-umukozi-orange/30'
+                    }`}>
+                    {step.number}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className={`text-lg sm:text-xl font-bold mb-2 transition-colors duration-300 ${activeStep === index ? 'text-umukozi-teal' : 'text-gray-900'
+                      }`}>{step.title}</h3>
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{step.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right - Synchronized Images */}
+          <div className="lg:sticky lg:top-32 lg:h-fit">
+            <div className="space-y-6 sm:space-y-8">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeStep}
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                  transition={{ duration: 0.6, ease: [0.4, 0.0, 0.2, 1] }}
+                  className="h-auto bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-umukozi-orange/20 transition-all duration-300 group"
+                >
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src={steps[activeStep].image}
+                      alt={steps[activeStep].alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-umukozi-orange/5 to-umukozi-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                    {/* Step indicator on image */}
+                    <div className="absolute top-4 left-4 w-8 h-8 bg-umukozi-orange text-white rounded-full flex items-center justify-center font-bold text-sm shadow-lg">
+                      {steps[activeStep].number}
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// Animated Value Proposition Component
+function AnimatedValueProp() {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0)
+  const animatedWords = ["sourcing", "screening", "scheduling", "interviews", "technical fit", "culture-fit", "onboarding"]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prev) => (prev + 1) % animatedWords.length)
+    }, 1500) // 1.5 seconds
+
+    return () => clearInterval(interval)
+  }, [animatedWords.length])
+
+  return (
+    <p className="text-xl sm:text-2xl md:text-3xl text-gray-900 leading-relaxed italic">
+      With one prompt, UmukoziHR deploys AI Agents to handle{" "}
+      <span className="inline-block relative overflow-hidden h-[1.4em] min-w-[180px] align-bottom">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={currentWordIndex}
+            initial={{ y: "100%" }}
+            animate={{ y: "0%" }}
+            exit={{ y: "-100%" }}
+            transition={{
+              duration: 0.5,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+            className="absolute top-0 left-0 w-full h-full flex items-center font-bold not-italic text-umukozi-orange whitespace-nowrap"
+          >
+            {animatedWords[currentWordIndex]}
+          </motion.span>
+        </AnimatePresence>
+      </span>
+      {" "}— delivering your next hire in under 24 hours.
+    </p>
+  )
 }
 
 export default function LandingPageClient() {
@@ -331,8 +571,8 @@ export default function LandingPageClient() {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>      
-{/* Floating Gradient Blobs */}
+      </nav>
+      {/* Floating Gradient Blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-umukozi-orange/20 rounded-full blur-2xl sm:blur-3xl"
@@ -361,7 +601,7 @@ export default function LandingPageClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              Transform Your Hiring with AI-Powered HR Solutions
+              Automate Your Entire Hiring Workflow With AI Agents
             </motion.h1>
 
             <motion.h2
@@ -449,8 +689,8 @@ export default function LandingPageClient() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 id="features-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything HR teams need to hire smarter</h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">AI-powered HR solutions that transform your recruitment process</p>
+              <h2 id="features-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">You Can Finally Hire On Autopilot!</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">AI agents streamline hiring end-to-end... Simple, Fast, and Scalable</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
@@ -483,116 +723,24 @@ export default function LandingPageClient() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Value Proposition Banner */}
+            <motion.div
+              className="mt-16 sm:mt-20 text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="max-w-4xl mx-auto bg-gradient-to-r from-umukozi-orange/10 via-white/20 to-umukozi-teal/10 backdrop-blur-lg rounded-2xl p-8 sm:p-12 border border-white/30 shadow-xl">
+                <AnimatedValueProp />
+              </div>
+            </motion.div>
           </div>
         </section>
 
         {/* How It Works */}
-        <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-umukozi-orange/5 to-umukozi-teal/5 relative overflow-hidden" aria-labelledby="how-it-works-heading">
-          {/* Subtle brand accent pattern */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-10 right-10 w-32 h-32 bg-umukozi-orange/10 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-20 left-20 w-40 h-40 bg-umukozi-teal/10 rounded-full blur-2xl"></div>
-          </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
-              {/* Left - Steps */}
-              <div className="lg:sticky lg:top-32 lg:h-fit">
-                <h2 id="how-it-works-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12">How it works</h2>
-                <div className="space-y-8 sm:space-y-12">
-                  {[
-                    { number: "01", title: "Define HR role requirements", desc: "Describe the HR position, skills, and cultural fit criteria you're seeking" },
-                    { number: "02", title: "Review AI-ranked candidates", desc: "Get HR professionals scored by expertise, experience, and role compatibility" },
-                    { number: "03", title: "Connect with top talent", desc: "1-click interview scheduling and personalized outreach to HR candidates" },
-                    { number: "04", title: "Complete the hire", desc: "Send offer letters and onboard your new HR team member seamlessly" },
-                  ].map((step, index) => (
-                    <motion.div
-                      key={step.number}
-                      className="flex items-start space-x-4 sm:space-x-6 relative"
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.2 }}
-                      viewport={{ once: true }}
-                    >
-                      {/* Connecting line for steps (except last one) */}
-                      {index < 3 && (
-                        <div className="absolute left-5 sm:left-6 top-10 sm:top-12 w-0.5 h-8 sm:h-12 bg-gradient-to-b from-umukozi-teal to-umukozi-teal-light opacity-30" />
-                      )}
-
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-umukozi-orange to-umukozi-orange-light text-white rounded-full flex items-center justify-center font-bold shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-10 text-sm sm:text-base flex-shrink-0">
-                        {step.number}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 hover:text-umukozi-teal transition-colors duration-300">{step.title}</h3>
-                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{step.desc}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right - Screenshots */}
-              <div className="space-y-6 sm:space-y-8">
-                <motion.div
-                  className="h-auto bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-umukozi-orange/20 transition-all duration-300 group"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src="/mockups/mockup-1.png"
-                      alt="UmukoziHR platform dashboard showing candidate search and AI-powered ranking features"
-                      width={800}
-                      height={600}
-                      className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-umukozi-orange/5 to-umukozi-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                </motion.div>
-                <motion.div
-                  className="h-auto bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-umukozi-orange/20 transition-all duration-300 group"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src="/mockups/mockup-2.png"
-                      alt="UmukoziHR candidate profile view with HR skills assessment and interview scheduling tools"
-                      width={800}
-                      height={600}
-                      className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-umukozi-orange/5 to-umukozi-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                </motion.div>
-                <motion.div
-                  className="h-auto bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-umukozi-orange/20 transition-all duration-300 group"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src="/mockups/mockup-3.png"
-                      alt="UmukoziHR analytics dashboard displaying hiring metrics and HR team performance insights"
-                      width={800}
-                      height={600}
-                      className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-umukozi-orange/5 to-umukozi-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <HowItWorksSection />
 
         {/* Comparison Table */}
         <section id="why" className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
@@ -801,8 +949,8 @@ export default function LandingPageClient() {
                   <motion.div
                     key={index}
                     className={`bg-white rounded-lg sm:rounded-xl border-2 transition-all duration-300 overflow-hidden relative ${isOpen
-                        ? 'border-umukozi-teal shadow-lg shadow-umukozi-teal/10'
-                        : 'border-gray-200 hover:border-umukozi-orange/30 hover:shadow-md'
+                      ? 'border-umukozi-teal shadow-lg shadow-umukozi-teal/10'
+                      : 'border-gray-200 hover:border-umukozi-orange/30 hover:shadow-md'
                       }`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

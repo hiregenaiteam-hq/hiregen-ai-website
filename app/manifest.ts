@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'UmukoziHR - HR powered by AI Agents',
     short_name: 'UmukoziHR',
-    description: 'Transform your hiring with UmukoziHR\'s intelligent recruiting platform. Get qualified candidates in under 24 hours.',
+    description: 'Automate Your Entire Hiring Workflow With AI Agents. Get qualified candidates in under 24 hours.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

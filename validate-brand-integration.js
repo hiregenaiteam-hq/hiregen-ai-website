@@ -171,7 +171,7 @@ function validateMainPageComponent() {
   
   // Check for UmukoziHR branding
   const brandingChecks = [
-    { name: 'Hero Headline', text: 'Transform Your Hiring with AI-Powered HR Solutions' },
+    { name: 'Hero Headline', text: 'Automate Your Entire Hiring Workflow With AI Agents' },
     { name: 'Hero Subtext', text: 'Connect with top talent faster using UmukoziHR' },
     { name: 'Primary CTA', text: 'Start Hiring Smarter' },
     { name: 'Secondary CTA', text: 'See Platform Demo' }
